@@ -37,10 +37,24 @@ fetch("ogp_template.png",{
         let exportOgp = document.getElementById("exportOgp");
         exportOgp.appendChild(canvas);
 
+        
+
+        //ogp:titleを設定
+        let ogpTitle = document.createElement("meta");
+        ogpTitle.setAttribute("property", "og:title");
+        ogpTitle.setAttribute("content", title);
+        document.head.appendChild(ogpTitle);
+
+        //ogp:urlを設定
+        let ogpUrl = document.createElement("meta");
+        ogpUrl.setAttribute("property", "og:url");
+        ogpUrl.setAttribute("content", location.href);
+        document.head.appendChild(ogpUrl);
+
         //作成したcanvasを、headerのogpに設定
-        let ogp = document.createElement("meta");
-        ogp.setAttribute("property", "og:image");
-        ogp.setAttribute("content", canvas.toDataURL("image/png"));
-        document.head.appendChild(ogp);
+        let ogpImage = document.createElement("meta");
+        ogpImage.setAttribute("property", "og:image");
+        ogpImage.setAttribute("content", canvas.toDataURL("image/png"));
+        document.head.appendChild(ogpImage);
     }
 });

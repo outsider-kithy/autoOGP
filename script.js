@@ -37,8 +37,6 @@ fetch("ogp_template.png",{
         let exportOgp = document.getElementById("exportOgp");
         exportOgp.appendChild(canvas);
 
-        
-
         //ogp:titleを設定
         let ogpTitle = document.createElement("meta");
         ogpTitle.setAttribute("property", "og:title");
@@ -58,3 +56,4 @@ fetch("ogp_template.png",{
         document.head.appendChild(ogpImage);
     }
 });
+
